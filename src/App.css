@@ -21,21 +21,70 @@
   width: 100%;
 }
 
-.card-back-container {
+.card-container {
   position: absolute;
-  top: 5%;
-  right: 5%;
   max-width: 75%;
 }
 
-.back-credit-card {
+.back-container {
+  top: 17%;
+  right: 5%;
+}
+
+.front-container {
+  top: 55%;
+  left: 5%;
+}
+
+.credit-card {
   width: 100%;
 }
 
 .security-code {
   color: white;
   position: absolute;
-  top: 42%;
+  top: 43%;
   right: 12%;
-  font-size: 1rem;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+.logo {
+  position: absolute;
+  width: 20%;
+  left: 7%;
+  top: 12%;
+}
+
+.card-number {
+  position: absolute;
+  color: white;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.card-holder {
+  position: absolute;
+  left: 7%;
+  color: white;
+  bottom: 18%;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+.exp-date {
+  position: absolute;
+  right: 7%;
+  color: white;
+  bottom: 18%;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  font-weight: 500;
 }

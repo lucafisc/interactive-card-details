@@ -1,7 +1,7 @@
 import cardBackImg from "../images/bg-card-back.png";
 export default function CardFront() {
   return (
-    <div className="card-back-container">
+    <div className="card-container back-container">
       <img
         src={cardBackImg}
         className="back credit-card"
