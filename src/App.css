@@ -9,3 +9,7 @@
 .header>img {
   width: 100%;
 }
+
+.credit-card {
+  max-width: 75%;
+}
