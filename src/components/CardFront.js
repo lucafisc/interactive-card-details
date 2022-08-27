@@ -4,7 +4,7 @@ export default function CardFront() {
     <div>
       <img
         src={cardFrontImg}
-        className="credit-card"
+        className="front credit-card"
         alt="Front side of credit card"
       />
     </div>

@@ -1,12 +1,13 @@
 import cardBackImg from "../images/bg-card-back.png";
 export default function CardFront() {
   return (
-    <div>
+    <div className="card-back-container">
       <img
         src={cardBackImg}
-        className="credit-card"
+        className="back credit-card"
         alt="Back side of credit card"
       />
+      <h3 className="security-code">000</h3>
     </div>
   );
 }
