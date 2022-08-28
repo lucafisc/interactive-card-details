@@ -11,6 +11,10 @@
 
 :root {
   --light-gray: #d2d3d8;
+  --very-dark-violet: #21092f;
+  --dark-grayish-violet: #8e8593;
+  --light-grayish-violet: #dedddf;
+  --violet: #6448fe;
 }
 
 .header {
@@ -43,9 +47,9 @@
 .security-code {
   color: white;
   position: absolute;
-  top: 43%;
+  top: 44%;
   right: 12%;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   letter-spacing: 2px;
   font-weight: 500;
 }
@@ -63,7 +67,7 @@
   top: 50%;
   width: 100%;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   letter-spacing: 2px;
 }
 
@@ -73,7 +77,7 @@
   color: white;
   bottom: 16%;
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   letter-spacing: 2px;
   font-weight: 500;
 }
@@ -84,4 +88,68 @@
 
 .exp-date {
   right: 7%;
+}
+
+.form {
+  margin-top: 120px;
+  padding: 0 35px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "holder holder holder holder"
+    "number number number number"
+    "month year cvc cvc"
+    "button button button button";
+  gap: 20px;
+}
+
+.holder {
+  grid-area: holder;
+}
+
+.number {
+  grid-area: number;
+}
+
+.month {
+  grid-area: month;
+}
+
+.year {
+  grid-area: year;
+}
+
+.cvc {
+  grid-area: cvc;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 4px;
+  font-weight: 800;
+  color: var(--very-dark-violet);
+}
+
+.input {
+  height: 60px;
+  border-radius: 10px;
+  margin-top: 10px;
+  border: 1px solid var(--light-grayish-violet);
+  text-indent: 12px;
+  font-size: 25px;
+  color: var(--dark-grayish-violet);
+  width: 100%;
+  outline: none;
+}
+
+.input:focus {
+  border-color: var(--violet);
+  ;
 }
