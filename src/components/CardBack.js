@@ -1,5 +1,6 @@
 import cardBackImg from "../images/bg-card-back.png";
-export default function CardFront() {
+export default function CardFront(props) {
+  const { cvc } = props.data;
   return (
     <div className="card-container back-container">
       <img
@@ -7,7 +8,7 @@ export default function CardFront() {
         className="back credit-card"
         alt="Back side of credit card"
       />
-      <h3 className="security-code">000</h3>
+      <h3 className="security-code">{cvc}</h3>
     </div>
   );
 }
