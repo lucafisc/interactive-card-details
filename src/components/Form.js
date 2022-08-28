@@ -12,6 +12,7 @@ export default function Form(props) {
           className="input"
           type="text"
           placeholder="e.g. Jane Appleseed"
+          maxLength={25}
         ></input>
       </div>
       <div className="field number">
@@ -21,8 +22,9 @@ export default function Form(props) {
           onChange={handleChange}
           value={number}
           className="input"
-          type="number"
+          type="tel"
           placeholder="e.g. 1234 5678 9123 0000"
+          maxLength={16}
         ></input>
       </div>
       <div className="field month">
@@ -32,8 +34,9 @@ export default function Form(props) {
           onChange={handleChange}
           value={month}
           className="input"
-          type="number"
+          type="tel"
           placeholder="MM"
+          maxLength={2}
         ></input>
       </div>
       <div className="field year">
@@ -43,8 +46,9 @@ export default function Form(props) {
           onChange={handleChange}
           value={year}
           className="input"
-          type="number"
+          type="tel"
           placeholder="YY"
+          maxLength={2}
         ></input>
       </div>
       <div className="field cvc">
@@ -55,8 +59,9 @@ export default function Form(props) {
           onChange={handleChange}
           value={cvc}
           className="input"
-          type="text"
+          type="tel"
           placeholder="e.g. 123"
+          maxLength={3}
         ></input>
       </div>
     </form>
