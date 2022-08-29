@@ -1,6 +1,9 @@
 export default function Form(props) {
   const { name, number, year, month, cvc } = props.data;
   const handleChange = props.changeHandler;
+  function submitForm() {
+    Event.preventDefault();
+  }
   return (
     <form className="form">
       <div className="field holder">
@@ -64,6 +67,7 @@ export default function Form(props) {
           maxLength={3}
         ></input>
       </div>
+      <button onClick={submitForm}>Confirm</button>
     </form>
   );
 }

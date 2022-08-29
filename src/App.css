@@ -25,6 +25,16 @@
   width: 100%;
 }
 
+.cards {
+  width: 100%;
+  aspect-ratio: 1.5;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 590px;
+}
+
 .card-container {
   position: absolute;
   max-width: 75%;
@@ -110,7 +120,9 @@
     "number number number number"
     "month year cvc cvc"
     "button button button button";
-  gap: 20px;
+  column-gap: 20px;
+  row-gap: 40px;
+  margin-bottom: 40px;
 }
 
 .holder {
@@ -161,4 +173,75 @@
 .input:focus {
   border-color: var(--violet);
   ;
+}
+
+.form>button {
+  grid-area: button;
+  color: var(--light-grayish-violet);
+  background-color: var(--very-dark-violet);
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 30px;
+  border: none;
+}
+
+.form>button:active {
+  background-color: var(--violet);
+}
+
+@media only screen and (min-width: 590px) {
+  .card-number {
+    font-size: 27px;
+  }
+
+  .card-holder,
+  .exp-date,
+  .security-code {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .App {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "card form form";
+  }
+
+  .header {
+    height: 100vh;
+    grid-area: card;
+  }
+
+  .header>img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cards {
+    transform: translateX(-20%);
+  }
+
+  .front-container {
+    top: 30%;
+  }
+
+  .back-container {
+    top: 50%;
+  }
+
+  .form {
+    grid-area: form;
+    justify-self: center;
+    align-self: center;
+    padding: 0 12vh 0 200px;
+    max-height: 450px;
+  }
+
+  .cards {
+    width: 500px;
+  }
+
+
 }

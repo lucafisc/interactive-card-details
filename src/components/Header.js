@@ -6,8 +6,10 @@ export default function Header({ props }) {
   return (
     <div className="header">
       <img src={background} />
-      <CardBack data={props} />
-      <CardFront data={props} />
+      <div className="cards">
+        <CardBack data={props} />
+        <CardFront data={props} />
+      </div>
     </div>
   );
 }
