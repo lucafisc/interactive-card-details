@@ -113,7 +113,11 @@
 }
 
 .form {
+  max-width: 700px;
   margin-top: 120px;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 35px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -125,7 +129,7 @@
     "button button button button";
   column-gap: 20px;
   row-gap: 40px;
-  margin-bottom: 40px;
+
 }
 
 .holder {
@@ -238,6 +242,7 @@
   }
 
   .form {
+    max-width: 900px;
     grid-area: form;
     justify-self: center;
     align-self: center;
