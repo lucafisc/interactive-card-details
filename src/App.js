@@ -18,10 +18,18 @@ function App() {
       [name]: value,
     }));
   }
+  function submitForm(e) {
+    e.preventDefault();
+    console.log(formData);
+  }
   return (
     <div className="App">
       <Header props={formData} />
-      <Form data={formData} changeHandler={handleChange} />
+      <Form
+        data={formData}
+        changeHandler={handleChange}
+        submitForm={submitForm}
+      />
     </div>
   );
 }

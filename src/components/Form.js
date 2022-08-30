@@ -1,9 +1,8 @@
 export default function Form(props) {
   const { name, number, year, month, cvc } = props.data;
   const handleChange = props.changeHandler;
-  function submitForm() {
-    Event.preventDefault();
-  }
+  const submitForm = props.submitForm;
+
   return (
     <form className="form">
       <div className="field holder">
