@@ -19,10 +19,13 @@
 
 .header {
   position: relative;
+  max-height: 450px;
 }
 
 .header>img {
   width: 100%;
+  object-fit: cover;
+  max-height: 400px;
 }
 
 .cards {
@@ -210,25 +213,28 @@
   }
 
   .header {
+    max-height: 100vh;
     height: 100vh;
     grid-area: card;
   }
 
   .header>img {
+    max-height: 100vh;
     height: 100%;
-    object-fit: cover;
   }
 
   .cards {
+    height: 450px;
     transform: translateX(-20%);
   }
 
   .front-container {
-    top: 30%;
+    top: 0;
   }
 
   .back-container {
-    top: 50%;
+    top: 100%;
+    transform: translateY(-100%);
   }
 
   .form {
@@ -241,6 +247,9 @@
 
   .cards {
     width: 500px;
+    top: 50%;
+    left: 20%;
+    transform: translateY(-50%);
   }
 
 
