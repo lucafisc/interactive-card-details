@@ -29,28 +29,30 @@ function App() {
   function submitForm(e) {
     e.preventDefault();
     let msgs = {};
-    Object.keys(formData).forEach(function (key, index) {
-      if (!formData[key]) {
-        msgs[key] = "Can't be blank";
-      } else if (key !== "name" && !onlyNumbers(formData[key])) {
-        msgs[key] = "Wrong format, numbers only";
-      } else if (key === "name" && !onlyLetters(formData[key])) {
-        msgs[key] = "Wrong format, characters only";
-      } else if (key === "name" && formData[key].length < 6) {
-        msgs[key] = "Name must be at least 6 characters long";
-      } else if (key === "number" && formData[key].length !== 16) {
-        msgs[key] = "Card number must have 16 digits";
-      } else if (
-        (key === "month" || key === "year") &&
-        formData[key].length !== 2
-      ) {
-        msgs[key] = "Date must have 2 digits";
-      } else if (key === "cvc" && formData[key].length !== 3) {
-        msgs[key] = "CVC must have 3 digits";
-      }
+    Object.keys(formData).forEach(function (key) {
+      msgs[key] = validateForm(formData, key);
     });
     setErrMsg(msgs);
   }
+
+  function validateForm(array, key) {
+    if (!array[key]) {
+      return "Can't be blank";
+    } else if (key !== "name" && !onlyNumbers(array[key])) {
+      return "Wrong format, numbers only";
+    } else if (key === "name" && !onlyLetters(array[key])) {
+      return "Wrong format, characters only";
+    } else if (key === "name" && array[key].length < 6) {
+      return "Name must be at least 6 characters long";
+    } else if (key === "number" && array[key].length !== 16) {
+      return "Card number must have 16 digits";
+    } else if ((key === "month" || key === "year") && array[key].length !== 2) {
+      return "Date must have 2 digits";
+    } else if (key === "cvc" && array[key].length !== 3) {
+      return "CVC must have 3 digits";
+    }
+  }
+
   function onlyNumbers(str) {
     return /^[0-9]+$/.test(str);
   }
