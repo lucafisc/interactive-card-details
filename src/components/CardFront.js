@@ -2,7 +2,6 @@ import cardFrontImg from "../images/bg-card-front.png";
 import cardLogo from "../images/card-logo.svg";
 export default function CardFront(props) {
   const { name, number, year, month } = props.data;
-  const space = "";
   return (
     <div className="card-container front-container">
       <img

@@ -20,7 +20,7 @@ function App() {
     cvc: false,
   });
 
-  const [formValid, setFormValid] = useState(false);
+  const [formValid, setFormValid] = useState(true);
 
   React.useEffect(() => {
     let valid = true;
