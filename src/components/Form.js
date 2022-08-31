@@ -3,7 +3,6 @@ export default function Form(props) {
   const err = props.errMsg;
   const handleChange = props.changeHandler;
   const submitForm = props.submitForm;
-  console.log(err);
   return (
     <form className="form">
       <div className="field holder">

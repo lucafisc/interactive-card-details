@@ -20,7 +20,6 @@ function App() {
   });
 
   function handleChange(event) {
-    console.log(event);
     const { name, value } = event.target;
     setFormData((prevFormData) => ({
       ...prevFormData,
@@ -29,7 +28,11 @@ function App() {
   }
   function submitForm(e) {
     e.preventDefault();
-    console.log(formData);
+    let msgs = {};
+    Object.keys(formData).forEach(function (key, index) {
+      msgs[key] = formData[key] ? false : "Can't be blank";
+    });
+    setErrMsg(msgs);
   }
   return (
     <div className="App">
