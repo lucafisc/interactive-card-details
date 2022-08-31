@@ -198,8 +198,46 @@
   border: none;
 }
 
-.form>button:active {
+button:active {
   background-color: var(--violet);
+}
+
+.complete {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 700px;
+  margin-top: 120px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.thank-you {
+  margin-top: 30px;
+  text-transform: uppercase;
+  color: var(--very-dark-violet);
+  font-weight: 500;
+  font-size: 2rem;
+  letter-spacing: 5px;
+}
+
+.msg {
+  color: var(--dark-grayish-violet);
+  margin-top: 20px;
+}
+
+.continue-button {
+  margin-top: 80px;
+  color: var(--light-grayish-violet);
+  background-color: var(--very-dark-violet);
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 30px;
+  border: none;
+  padding: 15px;
+  width: 70%;
+
 }
 
 @media only screen and (min-width: 590px) {
@@ -247,13 +285,18 @@
     transform: translateY(-100%);
   }
 
-  .form {
+  .form,
+  .complete {
     max-width: 900px;
     grid-area: form;
     justify-self: center;
     align-self: center;
     padding: 0 12vh 0 200px;
     max-height: 450px;
+  }
+
+  .continue-button {
+    width: 300px;
   }
 
   .cards {

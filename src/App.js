@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Form from "./components/Form";
+import Complete from "./components/Complete";
 function App() {
   const [formData, setFormData] = useState({
     name: "",
@@ -18,6 +19,20 @@ function App() {
     year: false,
     cvc: false,
   });
+
+  const [formValid, setFormValid] = useState(false);
+
+  React.useEffect(() => {
+    let valid = true;
+    Object.keys(errMsg).forEach(function (key) {
+      if (errMsg[key]) {
+        valid = false;
+      }
+    });
+    if (valid) {
+      toggleValid();
+    }
+  }, [errMsg]);
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -50,6 +65,8 @@ function App() {
       return "Date must have 2 digits";
     } else if (key === "cvc" && array[key].length !== 3) {
       return "CVC must have 3 digits";
+    } else {
+      return false;
     }
   }
 
@@ -59,15 +76,35 @@ function App() {
   function onlyLetters(str) {
     return /^[a-zA-Z\s]+$/.test(str);
   }
+
+  function toggleValid() {
+    setFormValid((prevValue) => !prevValue);
+  }
+
+  function resetFormData() {
+    setFormData((prevArray) => {
+      const newArray = [];
+      Object.keys(prevArray).forEach(function (key) {
+        newArray[key] = "";
+      });
+      return newArray;
+    });
+  }
+
   return (
     <div className="App">
       <Header props={formData} />
-      <Form
-        data={formData}
-        errMsg={errMsg}
-        changeHandler={handleChange}
-        submitForm={submitForm}
-      />
+      {!formValid && (
+        <Form
+          data={formData}
+          errMsg={errMsg}
+          changeHandler={handleChange}
+          submitForm={submitForm}
+        />
+      )}
+      {formValid && (
+        <Complete toggleValid={toggleValid} resetFormData={resetFormData} />
+      )}
     </div>
   );
 }
