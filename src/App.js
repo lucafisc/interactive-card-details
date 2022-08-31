@@ -10,6 +10,15 @@ function App() {
     year: "",
     cvc: "",
   });
+
+  const [errMsg, setErrMsg] = useState({
+    name: false,
+    number: false,
+    month: false,
+    year: false,
+    cvc: false,
+  });
+
   function handleChange(event) {
     console.log(event);
     const { name, value } = event.target;
@@ -27,6 +36,7 @@ function App() {
       <Header props={formData} />
       <Form
         data={formData}
+        errMsg={errMsg}
         changeHandler={handleChange}
         submitForm={submitForm}
       />
